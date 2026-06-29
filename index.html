@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Woodway Website Timeline</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #0b0b0b; background: #ffffff; padding: 40px 20px;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+    h1 { font-size: 16px; font-weight: 600; margin-bottom: 24px; }
+    .gantt { border: 1px solid #e1e0d9; }
+
+    /* Header */
+    .gantt-head { display: grid; grid-template-columns: 200px 1fr; background: #fcfcfb; border-bottom: 1px solid #e1e0d9; }
+    .head-task { border-right: 1px solid #e1e0d9; }
+    .months { display: flex; }
+    .month { padding: 10px 0; text-align: center; font-size: 12px; font-weight: 600; border-right: 1px solid #e1e0d9; }
+    .month:last-child { border-right: none; }
+    .mondays { position: relative; height: 24px; border-top: 1px solid #f0efec; }
+    .mon { position: absolute; transform: translateX(-50%); top: 4px; font-size: 10px; color: #888780; }
+
+    /* Body */
+    .gantt-body { position: relative; }
+    .gridlines { position: absolute; left: 200px; right: 0; top: 0; bottom: 0; z-index: 0; pointer-events: none; }
+    .gline { position: absolute; top: 0; bottom: 0; width: 1px; background: #f0efec; }
+    .rows { display: grid; grid-template-columns: 200px 1fr; position: relative; z-index: 1; }
+
+    .task-cell { padding: 8px 16px; border-right: 1px solid #e1e0d9; border-bottom: 1px solid #f0efec; min-height: 48px; display: flex; align-items: center; background: transparent; }
+    .task-name { font-size: 13px; font-weight: 500; line-height: 1.3; }
+    .lane { position: relative; z-index: 1; border-bottom: 1px solid #f0efec; min-height: 48px; background: transparent; }
+
+    .phase-cell { padding: 10px 16px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1px solid #e1e0d9; border-bottom: 1px solid #e1e0d9; background: #fcfcfb; }
+    .phase-lane { position: relative; z-index: 1; border-bottom: 1px solid #e1e0d9; background: #fcfcfb; }
+
+    .bar {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      height: 26px; border-radius: 4px;
+    }
+    .bar.launch { transform: translate(-100%, -50%); }
+    .bar-date {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      white-space: nowrap; font-size: 11px; color: #52514e;
+    }
+    .date-right { left: calc(100% + 8px); }
+    .date-left { right: calc(100% + 8px); text-align: right; }
+
+    .bar-messaging { background: #b8d97f; }
+    .bar-brand    { background: #aed9f7; }
+    .bar-design   { background: #a8e6d0; }
+    .bar-content  { background: #aed9f7; }
+    .bar-dev      { background: #c8b8f0; }
+
+    @media (prefers-color-scheme: dark) {
+      body { background: #1a1a19; color: #ffffff; }
+      .gantt { border-color: #2c2c2a; }
+      .gantt-head { background: #262625; border-bottom-color: #2c2c2a; }
+      .head-task { border-right-color: #2c2c2a; }
+      .month { border-right-color: #2c2c2a; }
+      .mondays { border-top-color: #2c2c2a; }
+      .mon { color: #898781; }
+      .gline { background: #2c2c2a; }
+      .task-cell { border-right-color: #2c2c2a; border-bottom-color: #262625; }
+      .lane { border-bottom-color: #262625; }
+      .phase-cell { background: #262625; border-right-color: #2c2c2a; border-bottom-color: #2c2c2a; }
+      .phase-lane { background: #262625; border-bottom-color: #2c2c2a; }
+      .bar-date { color: #b2b1aa; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Woodway Website Timeline</h1>
+
+    <div class="gantt">
+      <!-- HEADER -->
+      <div class="gantt-head">
+        <div class="head-task"></div>
+        <div>
+          <div class="months">
+            <div class="month" style="flex: 0 0 16.36%;">June 2026</div>
+            <div class="month" style="flex: 0 0 28.18%;">July 2026</div>
+            <div class="month" style="flex: 0 0 28.18%;">August 2026</div>
+            <div class="month" style="flex: 0 0 27.28%;">September 2026</div>
+          </div>
+          <div class="mondays">
+            <span class="mon" style="left: 2.73%;">15</span>
+            <span class="mon" style="left: 9.09%;">22</span>
+            <span class="mon" style="left: 15.45%;">29</span>
+            <span class="mon" style="left: 21.82%;">6</span>
+            <span class="mon" style="left: 28.18%;">13</span>
+            <span class="mon" style="left: 34.55%;">20</span>
+            <span class="mon" style="left: 40.91%;">27</span>
+            <span class="mon" style="left: 47.27%;">3</span>
+            <span class="mon" style="left: 53.64%;">10</span>
+            <span class="mon" style="left: 60%;">17</span>
+            <span class="mon" style="left: 66.36%;">24</span>
+            <span class="mon" style="left: 72.73%;">31</span>
+            <span class="mon" style="left: 79.09%;">7</span>
+            <span class="mon" style="left: 85.45%;">14</span>
+            <span class="mon" style="left: 91.82%;">21</span>
+            <span class="mon" style="left: 98.18%;">28</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div class="gantt-body">
+        <div class="gridlines">
+          <div class="gline" style="left: 2.73%;"></div>
+          <div class="gline" style="left: 9.09%;"></div>
+          <div class="gline" style="left: 15.45%;"></div>
+          <div class="gline" style="left: 21.82%;"></div>
+          <div class="gline" style="left: 28.18%;"></div>
+          <div class="gline" style="left: 34.55%;"></div>
+          <div class="gline" style="left: 40.91%;"></div>
+          <div class="gline" style="left: 47.27%;"></div>
+          <div class="gline" style="left: 53.64%;"></div>
+          <div class="gline" style="left: 60%;"></div>
+          <div class="gline" style="left: 66.36%;"></div>
+          <div class="gline" style="left: 72.73%;"></div>
+          <div class="gline" style="left: 79.09%;"></div>
+          <div class="gline" style="left: 85.45%;"></div>
+          <div class="gline" style="left: 91.82%;"></div>
+          <div class="gline" style="left: 98.18%;"></div>
+        </div>
+
+        <div class="rows">
+          <!-- MESSAGING -->
+          <div class="phase-cell">Messaging</div><div class="phase-lane"></div>
+
+          <div class="task-cell"><span class="task-name">Workshop</span></div>
+          <div class="lane"><div class="bar bar-messaging" style="left: 0%; width: 8px;"><span class="bar-date date-right">Jun 12</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Develop Messaging</span></div>
+          <div class="lane"><div class="bar bar-messaging" style="left: 1.82%; width: 8.18%;"><span class="bar-date date-right">Jun 14 - Jun 23</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Client Review + Refinements</span></div>
+          <div class="lane"><div class="bar bar-messaging" style="left: 10%; width: 12.73%;"><span class="bar-date date-right">Jun 23 - Jul 7</span></div></div>
+
+          <!-- BRAND EXPRESSION -->
+          <div class="phase-cell">Brand Expression</div><div class="phase-lane"></div>
+
+          <div class="task-cell"><span class="task-name">Kickoff</span></div>
+          <div class="lane"><div class="bar bar-brand" style="left: 10.91%; width: 8px;"><span class="bar-date date-right">Jun 24</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Refine Logo + Develop Stylescape</span></div>
+          <div class="lane"><div class="bar bar-brand" style="left: 10.91%; width: 10.91%;"><span class="bar-date date-right">Jun 24 - Jul 6</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Client Review</span></div>
+          <div class="lane"><div class="bar bar-brand" style="left: 21.82%; width: 1.82%;"><span class="bar-date date-right">Jul 6 - Jul 8</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Brand Expression Revisions</span></div>
+          <div class="lane"><div class="bar bar-brand" style="left: 23.64%; width: 5.45%;"><span class="bar-date date-right">Jul 8 - Jul 14</span></div></div>
+
+          <!-- WEB DESIGN -->
+          <div class="phase-cell">Web Design</div><div class="phase-lane"></div>
+
+          <div class="task-cell"><span class="task-name">Create Overall Design Direction</span></div>
+          <div class="lane"><div class="bar bar-design" style="left: 23.64%; width: 5.45%;"><span class="bar-date date-right">Jul 8 - Jul 14</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Client Review R1: Design Direction</span></div>
+          <div class="lane"><div class="bar bar-design" style="left: 29.09%; width: 2.73%;"><span class="bar-date date-right">Jul 14 - Jul 17</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Design All Pages</span></div>
+          <div class="lane"><div class="bar bar-design" style="left: 31.82%; width: 6.36%;"><span class="bar-date date-right">Jul 17 - Jul 24</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Client Review R2: All Pages</span></div>
+          <div class="lane"><div class="bar bar-design" style="left: 38.18%; width: 6.36%;"><span class="bar-date date-right">Jul 24 - Jul 31</span></div></div>
+
+          <!-- WEBSITE CONTENT -->
+          <div class="phase-cell">Website Content</div><div class="phase-lane"></div>
+
+          <div class="task-cell"><span class="task-name">Sitemap Development</span></div>
+          <div class="lane"><div class="bar bar-content" style="left: 15.45%; width: 3.64%;"><span class="bar-date date-right">Jun 29 - Jul 3</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Sitemap Approval</span></div>
+          <div class="lane"><div class="bar bar-content" style="left: 21.82%; width: 0.91%;"><span class="bar-date date-right">Jul 6 - Jul 7</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Content Provided By Woodway</span></div>
+          <div class="lane"><div class="bar bar-content" style="left: 23.64%; width: 4.55%;"><span class="bar-date date-right">Jul 8 - Jul 13</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Draft Content</span></div>
+          <div class="lane"><div class="bar bar-content" style="left: 28.18%; width: 3.64%;"><span class="bar-date date-right">Jul 13 - Jul 17</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Client Review</span></div>
+          <div class="lane"><div class="bar bar-content" style="left: 44.55%; width: 3.64%;"><span class="bar-date date-right">Jul 31 - Aug 4</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Content Revisions R1</span></div>
+          <div class="lane"><div class="bar bar-content" style="left: 48.18%; width: 2.73%;"><span class="bar-date date-right">Aug 4 - Aug 7</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Content Revisions R2</span></div>
+          <div class="lane"><div class="bar bar-content" style="left: 53.64%; width: 1.82%;"><span class="bar-date date-right">Aug 10 - Aug 12</span></div></div>
+
+          <!-- WEBSITE DEVELOPMENT (dates on the LEFT) -->
+          <div class="phase-cell">Website Development</div><div class="phase-lane"></div>
+
+          <div class="task-cell"><span class="task-name">Development Handoff</span></div>
+          <div class="lane"><div class="bar bar-dev" style="left: 55.45%; width: 8px;"><span class="bar-date date-left">Aug 12</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Development Website</span></div>
+          <div class="lane"><div class="bar bar-dev" style="left: 55.45%; width: 20%;"><span class="bar-date date-left">Aug 12 - Sep 3</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Internal Review</span></div>
+          <div class="lane"><div class="bar bar-dev" style="left: 75.45%; width: 4.55%;"><span class="bar-date date-left">Sep 3 - Sep 8</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Client Review R1</span></div>
+          <div class="lane"><div class="bar bar-dev" style="left: 80%; width: 2.73%;"><span class="bar-date date-left">Sep 8 - Sep 11</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Website Revisions R1</span></div>
+          <div class="lane"><div class="bar bar-dev" style="left: 82.73%; width: 6.36%;"><span class="bar-date date-left">Sep 11 - Sep 18</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Client Review R2</span></div>
+          <div class="lane"><div class="bar bar-dev" style="left: 89.09%; width: 4.55%;"><span class="bar-date date-left">Sep 18 - Sep 23</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Website Revisions R2</span></div>
+          <div class="lane"><div class="bar bar-dev" style="left: 93.64%; width: 6.36%;"><span class="bar-date date-left">Sep 23 - Sep 30</span></div></div>
+
+          <div class="task-cell"><span class="task-name">Website Launch</span></div>
+          <div class="lane"><div class="bar bar-dev launch" style="left: 100%; width: 8px;"><span class="bar-date date-left">Sep 30</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
