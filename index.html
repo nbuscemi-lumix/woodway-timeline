@@ -57,6 +57,10 @@
     .bar-design   { background: #204B2C; }
     .bar-content  { background: #FFFEC0; }
     .bar-dev      { background: #870632; }
+    .bar-dev-sub  { background: #c46a86; height: 20px; }
+
+    .task-cell.subtask { padding-left: 32px; }
+    .task-cell.subtask .task-name { color: #6b6b6b; font-weight: 400; font-size: 12px; }
 
     /* Today line */
     .today-line {
@@ -79,6 +83,7 @@
       .phase-lane { background: #262625; border-bottom-color: #2c2c2a; }
       .bar { border-color: rgba(255,255,255,0.18); }
       .bar-date { color: #b2b1aa; }
+      .task-cell.subtask .task-name { color: #9a9992; }
     }
   </style>
 </head>
@@ -173,16 +178,7 @@
           <div class="lane"><div class="bar bar-brand" style="left: 27.86%; width: 2.14%;"><span class="bar-date date-right">Jul 21 - Jul 24</span></div></div>
           <div class="task-cell"><span class="task-name">Client Review: Stylescape</span></div>
           <div class="lane"><div class="bar bar-brand" style="left: 30.00%; width: 12.14%;"><span class="bar-date date-right">Jul 24 - Aug 10</span></div></div>
-          <div class="phase-cell">Web Design</div><div class="phase-lane"></div>
-          <div class="task-cell"><span class="task-name">Create Overall Design Direction</span></div>
-          <div class="lane"><div class="bar bar-design" style="left: 42.86%; width: 5.71%;"><span class="bar-date date-right">Aug 11 - Aug 19</span></div></div>
-          <div class="task-cell"><span class="task-name">Client Review R1: Design Direction</span></div>
-          <div class="lane"><div class="bar bar-design" style="left: 48.57%; width: 1.43%;"><span class="bar-date date-right">Aug 19 - Aug 21</span></div></div>
-          <div class="task-cell"><span class="task-name">Design All Pages</span></div>
-          <div class="lane"><div class="bar bar-design" style="left: 52.14%; width: 5.71%;"><span class="bar-date date-right">Aug 24 - Sep 1</span></div></div>
-          <div class="task-cell"><span class="task-name">Client Review R2: All Pages</span></div>
-          <div class="lane"><div class="bar bar-design" style="left: 57.86%; width: 5.00%;"><span class="bar-date date-right">Sep 1 - Sep 8</span></div></div>
-          <div class="phase-cell">Website Content</div><div class="phase-lane"></div>
+          <div class="phase-cell">Website Design + Review</div><div class="phase-lane"></div>
           <div class="task-cell"><span class="task-name">Sitemap Development</span></div>
           <div class="lane"><div class="bar bar-content" style="left: 12.14%; width: 2.86%;"><span class="bar-date date-right">Jun 29 - Jul 3</span></div></div>
           <div class="task-cell"><span class="task-name">Sitemap Approval</span></div>
@@ -191,29 +187,41 @@
           <div class="lane"><div class="bar bar-content" style="left: 25.00%; width: 5.00%;"><span class="bar-date date-right">Jul 17 - Jul 24</span></div></div>
           <div class="task-cell"><span class="task-name">Draft Content</span></div>
           <div class="lane"><div class="bar bar-content" style="left: 31.43%; width: 2.86%;"><span class="bar-date date-right">Jul 26 - Jul 30</span></div></div>
-          <div class="task-cell"><span class="task-name">Client Review</span></div>
-          <div class="lane"><div class="bar bar-content" style="left: 57.86%; width: 5.00%;"><span class="bar-date date-right">Sep 1 - Sep 8</span></div></div>
-          <div class="task-cell"><span class="task-name">Content Revisions R1</span></div>
-          <div class="lane"><div class="bar bar-content" style="left: 62.86%; width: 3.57%;"><span class="bar-date date-right">Sep 8 - Sep 13</span></div></div>
-          <div class="task-cell"><span class="task-name">Content Revisions R2</span></div>
-          <div class="lane"><div class="bar bar-content" style="left: 68.57%; width: 4.29%;"><span class="bar-date date-right">Sep 16 - Sep 22</span></div></div>
+          <div class="task-cell"><span class="task-name">Create Overall Design Direction</span></div>
+          <div class="lane"><div class="bar bar-content" style="left: 42.86%; width: 5.71%;"><span class="bar-date date-right">Aug 11 - Aug 19</span></div></div>
+          <div class="task-cell"><span class="task-name">Client Review R1: Design Direction</span></div>
+          <div class="lane"><div class="bar bar-content" style="left: 48.57%; width: 1.43%;"><span class="bar-date date-right">Aug 19 - Aug 21</span></div></div>
+          <div class="task-cell"><span class="task-name">Client Review: Homepage</span></div>
+          <div class="lane"><div class="bar bar-content" style="left: 53.57%; width: 3.57%;"><span class="bar-date date-right">Aug 26 - Aug 31</span></div></div>
+          <div class="task-cell"><span class="task-name">Design All Pages</span></div>
+          <div class="lane"><div class="bar bar-content" style="left: 53.57%; width: 5.00%;"><span class="bar-date date-right">Aug 26 - Sep 2</span></div></div>
+          <div class="task-cell"><span class="task-name">Client Review: All Pages</span></div>
+          <div class="lane"><div class="bar bar-content" style="left: 58.57%; width: 5.00%;"><span class="bar-date date-right">Sep 2 - Sep 9</span></div></div>
+          <div class="task-cell"><span class="task-name">Design All Sub-Pages</span></div>
+          <div class="lane"><div class="bar bar-content" style="left: 63.57%; width: 5.00%;"><span class="bar-date date-right">Sep 9 - Sep 16</span></div></div>
           <div class="phase-cell">Website Development</div><div class="phase-lane"></div>
           <div class="task-cell"><span class="task-name">Development Handoff</span></div>
           <div class="lane"><div class="bar bar-dev" style="left: 57.14%; width: 8px;"><span class="bar-date date-left">Aug 31</span></div></div>
-          <div class="task-cell"><span class="task-name">Development Website</span></div>
-          <div class="lane"><div class="bar bar-dev" style="left: 57.14%; width: 15.71%;"><span class="bar-date date-left">Aug 31 - Sep 22</span></div></div>
+          <div class="task-cell"><span class="task-name">Develop Website</span></div>
+          <div class="lane"><div class="bar bar-dev" style="left: 57.14%; width: 15.00%;"><span class="bar-date date-left">Aug 31 - Sep 21</span></div></div>
+          <div class="task-cell subtask"><span class="task-name">↳ Develop Homepage</span></div>
+          <div class="lane"><div class="bar bar-dev-sub" style="left: 57.14%; width: 5.00%;"><span class="bar-date date-left">Aug 31 - Sep 7</span></div></div>
+          <div class="task-cell subtask"><span class="task-name">↳ Develop All Pages</span></div>
+          <div class="lane"><div class="bar bar-dev-sub" style="left: 62.14%; width: 5.00%;"><span class="bar-date date-left">Sep 7 - Sep 14</span></div></div>
+          <div class="task-cell subtask"><span class="task-name">↳ Develop All Sub-Pages</span></div>
+          <div class="lane"><div class="bar bar-dev-sub" style="left: 67.14%; width: 5.00%;"><span class="bar-date date-left">Sep 14 - Sep 21</span></div></div>
           <div class="task-cell"><span class="task-name">Internal Review</span></div>
-          <div class="lane"><div class="bar bar-dev" style="left: 72.86%; width: 3.57%;"><span class="bar-date date-left">Sep 22 - Sep 27</span></div></div>
+          <div class="lane"><div class="bar bar-dev" style="left: 72.14%; width: 3.57%;"><span class="bar-date date-left">Sep 21 - Sep 26</span></div></div>
           <div class="task-cell"><span class="task-name">Client Review R1</span></div>
-          <div class="lane"><div class="bar bar-dev" style="left: 76.43%; width: 3.57%;"><span class="bar-date date-left">Sep 27 - Oct 2</span></div></div>
+          <div class="lane"><div class="bar bar-dev" style="left: 75.71%; width: 3.57%;"><span class="bar-date date-left">Sep 26 - Oct 1</span></div></div>
           <div class="task-cell"><span class="task-name">Website Revisions R1</span></div>
-          <div class="lane"><div class="bar bar-dev" style="left: 80.00%; width: 5.00%;"><span class="bar-date date-left">Oct 2 - Oct 9</span></div></div>
+          <div class="lane"><div class="bar bar-dev" style="left: 79.29%; width: 5.00%;"><span class="bar-date date-left">Oct 1 - Oct 8</span></div></div>
           <div class="task-cell"><span class="task-name">Client Review R2</span></div>
-          <div class="lane"><div class="bar bar-dev" style="left: 85.00%; width: 5.00%;"><span class="bar-date date-left">Oct 9 - Oct 16</span></div></div>
+          <div class="lane"><div class="bar bar-dev" style="left: 84.29%; width: 5.00%;"><span class="bar-date date-left">Oct 8 - Oct 15</span></div></div>
           <div class="task-cell"><span class="task-name">Website Revisions R2</span></div>
-          <div class="lane"><div class="bar bar-dev" style="left: 90.00%; width: 5.00%;"><span class="bar-date date-left">Oct 16 - Oct 23</span></div></div>
+          <div class="lane"><div class="bar bar-dev" style="left: 89.29%; width: 5.00%;"><span class="bar-date date-left">Oct 15 - Oct 22</span></div></div>
           <div class="task-cell"><span class="task-name">Website Launch</span></div>
-          <div class="lane"><div class="bar bar-dev launch" style="left: 95.00%; width: 8px;"><span class="bar-date date-left">Oct 23</span></div></div>
+          <div class="lane"><div class="bar bar-dev launch" style="left: 94.29%; width: 8px;"><span class="bar-date date-left">Oct 22</span></div></div>
 
         </div>
       </div>
